@@ -3,6 +3,7 @@ import './styles/App.css';
 import { useQuery } from 'react-query';
 
 import Header from './components/Header/Header';
+import Description from './components/Description/Description';
 
 const url = 'https://api.spacex.land/graphql/';
 const SPACEX_QUERY = `{
@@ -68,7 +69,8 @@ export default function App() {
   return (
     <div className="App" >
       <Header />
-      <span>{data.launchesPast[0].mission_name}</span>
+      {/* <span>{data.launchesPast[0].mission_name}</span> */}
+      <Description name={data.launchesPast[0].mission_name} />
     </div >
   );
 }

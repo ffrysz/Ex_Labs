@@ -1,0 +1,54 @@
+.mission-name {
+  display: block;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 49px;
+  margin-bottom: 23px;
+}
+
+.info-name, .info-text {
+  display: block;
+  font-weight: 500;
+}
+
+.info-name {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #868686;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.info-text {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.left-col {
+  text-align: left;
+}
+
+.right-col {
+  text-align: right;
+}
+
+.description {
+  display: flex;
+  border-bottom: 1px solid #5C5C5D;
+}
+
+.col-2 {
+  flex: 50%;
+}
+
+.more-info-button {
+  width: 160px;
+  height: 54px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: 0;
+  border: 2px solid #FFFFFF;
+  margin: 40px 0;
+}

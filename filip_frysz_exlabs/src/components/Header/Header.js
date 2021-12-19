@@ -1,10 +1,11 @@
 import React from 'react';
 import './Header.css';
+import Logo from './Vector.svg';
 
 const Header = () => {
   return (
     <div className='header'>
-      <h1>SPACEX</h1>
+      <img src={Logo} alt='Logo' />
 
     </div>
   );
