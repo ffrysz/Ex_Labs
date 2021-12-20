@@ -70,3 +70,35 @@
   text-transform: uppercase;
 }
 
+.rocket-info {
+  display: flex;
+  text-align: left;
+}
+
+.rocket-info .rocket-name-text {
+  width: 90px;
+}
+
+.rocket-name-recovered {
+  padding: 0;
+  color: #000000;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.rocket-name-recovered-container {
+  border-radius: 4px;
+  height: 20px;
+  width: 77px;
+  background: #6FB46E;
+  text-align: center;
+}
+
+.rocket-name-unrecovered-container {
+  border-radius: 4px;
+  height: 20px;
+  width: 107px;
+  background: #BE4E35;
+  text-align: center;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.css';
 import Logo from './Group.svg';
-import Arrow from './Path.svg';
 
 const Header = (props) => {
 

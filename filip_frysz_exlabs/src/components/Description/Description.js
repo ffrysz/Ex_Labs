@@ -19,6 +19,24 @@ const Description = (props) => {
     return (`${d} ${m} ${y}`);
   }
 
+  const isRecovered = () => {
+    let recoveredInfo = '';
+    if (data.rocket.fairings != null) {
+      recoveredInfo = data.rocket.fairings.recovered;
+    }
+    const recovered = <div className='rocket-name-recovered-container'>
+      <span className='rocket-name-recovered'>Recovered</span>
+    </div>;
+    const unrecovered = <div className='rocket-name-unrecovered-container'>
+      <span className='rocket-name-recovered'>Unrecovered</span>
+    </div>;
+    if (!recoveredInfo) {
+      return unrecovered;
+    } else {
+      return recovered;
+    }
+  }
+
   return (
     <div className='container'>
       <div className='description'>
@@ -26,7 +44,10 @@ const Description = (props) => {
           <span className='info-name'>Mission</span>
           <span className='mission-name'>{data.mission_name}</span>
           <span className='info-name'>Rocket</span>
-          <span className='info-text'>{data.rocket.rocket_name}</span>
+          <div className='rocket-info'>
+            <span className='info-text rocket-name-text'>{data.rocket.rocket_name}</span>
+            {isRecovered()}
+          </div>
           <button className='more-info-button'>Learn more</button>
         </div>
         <div className='col-2 right-col'>
