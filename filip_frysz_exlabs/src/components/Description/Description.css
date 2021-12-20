@@ -102,3 +102,44 @@
   background: #BE4E35;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .description {
+    flex-direction: column;
+  }
+
+  .col-2 {
+    flex: 100%;
+  }
+
+  .right-col {
+    text-align: left;
+  }
+
+  .ships {
+    justify-content: center;
+  }
+
+  .mission-name {
+    font-size: 34px;
+  }
+
+  .info-name {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 7px;
+  }
+
+  .info-text {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 19px;
+  }
+
+  .more-info-button {
+    /* display: block; */
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto 27px auto ;
+  }
+}

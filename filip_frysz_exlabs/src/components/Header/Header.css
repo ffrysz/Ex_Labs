@@ -30,3 +30,13 @@
 .button-change-launch:hover i {
   color: #FFFFFF;
 }
+
+@media (max-width: 767px) {
+  .header {
+    height: 80px;
+  }
+
+  .header img {
+    transform: scale(0.7);
+  }
+}
