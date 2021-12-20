@@ -67,7 +67,7 @@ export default function App() {
 
   return (
     <div className="App" >
-      <Header prev={loadPrevious} next={loadNext} />
+      <Header prev={loadPrevious} next={loadNext} current={landingId} />
       <Description data={data.launchesPast[landingId]} />
     </div >
   );

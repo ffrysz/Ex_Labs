@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Description.css';
 import ShipCard from '../ShipCard/ShipCard';
 
@@ -6,9 +6,9 @@ const Description = (props) => {
 
   const { data } = props;
 
-  const site = data.launch_site.site_id.replaceAll('_', ' ');
+  const formatDate = (start) => {
 
-  const formatDate = (rawDate) => {
+    const rawDate = data.launch_date_local;
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
@@ -16,8 +16,28 @@ const Description = (props) => {
     const y = rawDate.slice(0, 4);
     const m = monthNames[rawDate.slice(5, 7) - 1];
     const d = rawDate.slice(8, 10);
-    return (`${d} ${m} ${y}`);
+
+
+    if (start) {
+      return (`${d} ${m} ${y}`);
+    } else updateDate(`${d} ${m} ${y}`);
   }
+
+  const [launchDate, updateDate] = useState(formatDate('start'));
+
+  const changeDate = (rawDate, event) => {
+
+    if (event && event.matches) {
+      updateDate(rawDate.replace('T', ' '));
+    } else {
+      formatDate();
+    }
+  }
+
+  const mediaQuery = window.matchMedia('(max-width: 767px)');
+  mediaQuery.addEventListener('change', (event) => changeDate(data.launch_date_local, event));
+
+  const site = data.launch_site.site_id.replaceAll('_', ' ');
 
   const isRecovered = () => {
     let recoveredInfo = '';
@@ -52,7 +72,7 @@ const Description = (props) => {
         </div>
         <div className='col-2 right-col'>
           <span className='info-name'>Launch Date</span>
-          <span className='info-text'>{formatDate(data.launch_date_local)}</span>
+          <span className='info-text'>{launchDate}</span>
           <span className='info-name'>Launch Site</span>
           <span className='info-text site'>{site}</span>
           <span className='info-site-long'>{data.launch_site.site_name_long}</span>

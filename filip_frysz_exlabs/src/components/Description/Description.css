@@ -155,9 +155,7 @@
   }
 
   .more-info-button {
-    /* display: block; */
     width: 100%;
-    max-width: 345px;
     margin: 0 auto 27px auto ;
   }
 }
