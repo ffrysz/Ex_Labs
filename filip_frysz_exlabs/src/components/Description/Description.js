@@ -48,13 +48,14 @@ const Description = (props) => {
             <span className='info-text rocket-name-text'>{data.rocket.rocket_name}</span>
             {isRecovered()}
           </div>
-          <button className='more-info-button'>Learn more</button>
+          <button className='more-info-button' onClick={() => { window.location.href = 'https://spacex.com' }}>Learn more</button>
         </div>
         <div className='col-2 right-col'>
           <span className='info-name'>Launch Date</span>
           <span className='info-text'>{formatDate(data.launch_date_local)}</span>
           <span className='info-name'>Launch Site</span>
           <span className='info-text site'>{site}</span>
+          <span className='info-site-long'>{data.launch_site.site_name_long}</span>
         </div>
       </div>
       <div className='ships'>

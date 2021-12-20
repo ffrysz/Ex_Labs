@@ -55,6 +55,11 @@
   margin: 17px 0 40px 0;
 }
 
+.more-info-button:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
 .ships span {
   flex: 100%;
   text-align: left;
@@ -68,6 +73,19 @@
 
 .site {
   text-transform: uppercase;
+}
+
+.site:hover + .info-site-long {
+  display: inline-block;
+}
+
+.info-site-long {
+  display: none;
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 4px;
+  padding: 7px 10px 4px 10px;
+  font-size: 14px;
 }
 
 .rocket-info {
