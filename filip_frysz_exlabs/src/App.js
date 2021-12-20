@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
 import { useQuery } from 'react-query';
 
@@ -7,45 +7,35 @@ import Description from './components/Description/Description';
 
 const url = 'https://api.spacex.land/graphql/';
 const SPACEX_QUERY = `{
-    launchesPast(limit: 10) {
-      mission_name
-      launch_date_local
-      launch_site {
-        site_name_long
-      }
-      links {
-        article_link
-        video_link
-      }
-      rocket {
-        rocket_name
-        first_stage {
-          cores {
-            flight
-            core {
-              reuse_count
-              status
-            }
-          }
-        }
-        second_stage {
-          payloads {
-            payload_type
-            payload_mass_kg
-            payload_mass_lbs
-          }
-        }
-      }
-      ships {
-        name
-        home_port
-        image
+  launchesPast(limit: 5) {
+    mission_name
+    launch_date_local
+    launch_site {
+      site_name_long
+      site_id
+    }
+    rocket {
+      rocket_name
+      fairings {
+        recovered
       }
     }
-  }`;
+    ships {
+      name
+      home_port
+      image
+      weight_kg
+    }
+    links {
+      article_link
+    }
+  }
+}`;
 
 
 export default function App() {
+
+  const [landingId, setLandingId] = useState(0);
 
   const { data, isLoading, error } = useQuery("launches", () => {
     return fetch(url, {
@@ -63,14 +53,22 @@ export default function App() {
       .then((data) => data.data);
   });
 
-  if (isLoading) return "Loading...";
+  const loadPrevious = () => {
+    if (landingId > 0) setLandingId(landingId - 1);
+  }
+
+  const loadNext = () => {
+    if (landingId < 4) setLandingId(landingId + 1);
+  }
+
+
+  if (isLoading) return "Loading data...";
   if (error) return <pre>{error.message}</pre>;
 
   return (
     <div className="App" >
-      <Header />
-      {/* <span>{data.launchesPast[0].mission_name}</span> */}
-      <Description name={data.launchesPast[0].mission_name} />
+      <Header prev={loadPrevious} next={loadNext} />
+      <Description data={data.launchesPast[landingId]} />
     </div >
   );
 }

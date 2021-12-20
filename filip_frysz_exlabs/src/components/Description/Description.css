@@ -23,6 +23,7 @@
 .info-text {
   font-size: 18px;
   line-height: 21px;
+  margin-bottom: 23px;
 }
 
 .left-col {
@@ -36,6 +37,7 @@
 .description {
   display: flex;
   border-bottom: 1px solid #5C5C5D;
+  margin-bottom: 36px;
 }
 
 .col-2 {
@@ -50,5 +52,21 @@
   color: #FFFFFF;
   background: 0;
   border: 2px solid #FFFFFF;
-  margin: 40px 0;
+  margin: 17px 0 40px 0;
 }
+
+.ships span {
+  flex: 100%;
+  text-align: left;
+}
+
+.ships {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.site {
+  text-transform: uppercase;
+}
+

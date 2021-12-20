@@ -1,8 +1,32 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 150px;
   border-bottom: 1px solid #5C5C5D;
   margin-bottom: 36px;
+}
+
+.previous {
+  transform: rotate(-180deg);
+}
+
+.previous, .next {
+  color: #5C5C5D;
+  font-size: 24px;
+}
+
+/* .previous:hover, .next:hover {
+  color: #FFFFFF;
+} */
+
+.button-change-launch {
+  background: 0;
+  border: none;
+  height: 100%;
+  width: 40px;
+}
+
+.button-change-launch:hover i {
+  color: #FFFFFF;
 }
