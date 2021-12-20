@@ -5,8 +5,9 @@ This project was created using Create React App solution. It's main purpose is t
 # How to run the project?
 
 1. First you need to download the repository to your desktop. 
-2. Then you should run `npm install` command, which should download all the necessary packages to your device.
-3. Then you should be able to run the project using the `npm start` command. The app should run in your browser in the `localhost:3000` endpoint.
+2. Make sure that you have node.js installed on your device in order to run npm commands in bash CLI.
+3. Then you should run `npm install` command inside filip_frysz_exlabs directory, which should download and install all the necessary packages to your device.
+4. Then you should be able to run the project using the `npm start` command (also inside filip_frysz_exlabs dir, in the bash CLI). The app should run in your browser in the `localhost:3000` endpoint.
 
 ## How to navigate the project
 
